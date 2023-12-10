@@ -1,4 +1,5 @@
 import { Console } from '@woowacourse/mission-utils';
+import InputValidator from '../Validator/InputValidator';
 
 const InputView = {
   async readBuyingPrice() {
