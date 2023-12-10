@@ -9,8 +9,8 @@ const InputValidator = {
     }
   },
 
-  winningNumbers(input) {
-    if (!/^[0-9]+$/.test(input)) {
+  winningNumbers(inputArray) {
+    if (inputArray.some((value) => !/^[0-9]+$/.test(value))) {
       throw new Error('[ERROR] 숫자를 입력하세요.');
     }
   },

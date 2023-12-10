@@ -10,7 +10,8 @@ const InputView = {
 
   async readWinningNumbers() {
     const input = await Console.readLineAsync('당첨 번호를 입력해 주세요.\n');
-    InputValidator.winningNumbers(input);
+    const inputArray = input.split(',').map((value) => value.trim());
+    InputValidator.winningNumbers(inputArray);
     return [...input].map(Number);
   },
 

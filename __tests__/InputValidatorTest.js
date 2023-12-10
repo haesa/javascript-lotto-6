@@ -12,7 +12,7 @@ describe('InputValidator 테스트', () => {
   });
 
   test('당첨 번호 입력 예외 테스트', () => {
-    expect(() => InputValidator.winningNumbers('abc')).toThrow(
+    expect(() => InputValidator.winningNumbers(['a', 'b', 'c'])).toThrow(
       '[ERROR] 숫자를 입력하세요.'
     );
   });
