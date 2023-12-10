@@ -7,12 +7,6 @@ describe('로또 클래스 테스트', () => {
     expect(count).toBe(3);
   });
 
-  test('당첨 번호에 보너스 번호가 포함되는지 테스트', () => {
-    const lotto = new Lotto([1, 2, 3, 4, 5, 6]);
-    expect(lotto.containsBonus(1)).toBe(true);
-    expect(lotto.containsBonus(23)).toBe(false);
-  });
-
   describe('로또 번호 예외 테스트', () => {
     test('로또 번호의 개수가 6개가 넘어가면 예외가 발생한다.', () => {
       expect(() => {
@@ -30,6 +24,15 @@ describe('로또 클래스 테스트', () => {
       expect(() => {
         new Lotto([1, 2, 3, 4, 5, 5]);
       }).toThrow('[ERROR] 숫자 중복 없이 입력하세요.');
+    });
+  });
+
+  describe('보너스 번호 예외 테스트', () => {
+    test('보너스 번호가 당첨 번호와 중복이면 예외가 발생한다.', () => {
+      const lotto = new Lotto([1, 2, 3, 4, 5, 6]);
+      expect(() => {
+        lotto.validateBonus(5);
+      }).toThrow('[ERROR] 당첨 번호에 없는 숫자를 입력하세요.');
     });
   });
 });

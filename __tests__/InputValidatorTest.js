@@ -16,4 +16,14 @@ describe('InputValidator 테스트', () => {
       '[ERROR] 숫자를 입력하세요.'
     );
   });
+
+  test('보너스 번호 입력 예외 테스트', () => {
+    expect(() => InputValidator.bonusNumber('abc')).toThrow(
+      '[ERROR] 숫자를 입력하세요.'
+    );
+
+    expect(() => InputValidator.bonusNumber('0')).toThrow(
+      '[ERROR] 1 이상 45 이하의 숫자를 입력하세요.'
+    );
+  });
 });

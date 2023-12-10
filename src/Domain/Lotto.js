@@ -31,8 +31,10 @@ class Lotto {
     );
   }
 
-  containsBonus(bonus) {
-    return this.#numbers.includes(bonus);
+  validateBonus(bonus) {
+    if (this.#numbers.includes(bonus)) {
+      throw new Error('[ERROR] 당첨 번호에 없는 숫자를 입력하세요.');
+    }
   }
 }
 

@@ -12,6 +12,12 @@ const InputView = {
     InputValidator.winningNumbers(input);
     return [...input].map(Number);
   },
+
+  async readBonusNumber() {
+    const input = await Console.readLineAsync('보너스 번호를 입력해 주세요.\n');
+    InputValidator.bonusNumber(input);
+    return Number(input);
+  },
 };
 
 export default InputView;
