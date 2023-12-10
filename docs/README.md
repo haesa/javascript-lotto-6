@@ -5,12 +5,12 @@
 - 로또 번호가 당첨 번호에 포함되는지 확인하는 기능 - `contains()`
 - 로또 번호가 당첨 번호와 몇 개 일치하는지 확인하는 기능 - `matchCount()`
 - 당첨 번호에 보너스 번호가 포함되는지 확인하는 기능 - `containsBonus()`
-- 수익률 구하는 기능 - `calculateLottoReturnRate()`
+- 수익률 구하는 기능 - `calculateLottoYield()`
   - 소수 둘째 자리에서 반올림
     ```
     로또 수익률 = 로또 수익 / 로또 구매 금액 * 100
     ```
-- 로또 수익 구하는 기능 - `calculateLottoYield()`
+- 로또 수익 구하는 기능 - `calculateLottoGrossProfit()`
 - 로또 숫자 정렬하는 기능 - `sortLottoNumber()`
 
   <br />
