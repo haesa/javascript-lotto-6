@@ -1,4 +1,4 @@
-import Lotto from '../src/Lotto.js';
+import Lotto from '../src/Domain/Lotto';
 
 describe('로또 클래스 테스트', () => {
   test('당첨 번호랑 일치하는 로또 번호 개수 테스트', () => {

@@ -1,4 +1,4 @@
-import LottoShop from '../src/LottoShop';
+import LottoShop from '../src/Domain/LottoShop';
 
 describe('LottoShop 테스트', () => {
   test('로또 발행 테스트', () => {
