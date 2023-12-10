@@ -4,6 +4,7 @@
 - 구입 금액만큼 로또를 발행하는 기능 - `issueLottoTickets()`
 - 로또 번호가 당첨 번호에 포함되는지 확인하는 기능 - `contains()`
 - 로또 번호가 당첨 번호와 몇 개 일치하는지 확인하는 기능 - `matchCount()`
+- 로또 등수를 구하는 기능 - `determinePrizeTier()`
 - 수익률 구하는 기능 - `calculateYield()`
   - 소수 둘째 자리에서 반올림
     ```
