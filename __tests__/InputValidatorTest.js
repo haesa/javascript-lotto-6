@@ -10,4 +10,10 @@ describe('InputValidator 테스트', () => {
       '[ERROR] 1000 단위로 입력하세요.'
     );
   });
+
+  test('당첨 번호 입력 예외 테스트', () => {
+    expect(() => InputValidator.winningNumbers('abc')).toThrow(
+      '[ERROR] 숫자를 입력하세요.'
+    );
+  });
 });

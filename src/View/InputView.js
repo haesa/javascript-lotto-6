@@ -6,6 +6,12 @@ const InputView = {
     InputValidator.buyingPrice(input);
     return Number(input);
   },
+
+  async readWinningNumbers() {
+    const input = await Console.readLineAsync('당첨 번호를 입력해 주세요.\n');
+    InputValidator.winningNumbers(input);
+    return [...input].map(Number);
+  },
 };
 
 export default InputView;
