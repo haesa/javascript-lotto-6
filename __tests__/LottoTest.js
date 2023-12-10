@@ -7,6 +7,12 @@ describe('로또 클래스 테스트', () => {
     expect(count).toBe(3);
   });
 
+  test('당첨 번호에 보너스 번호가 포함되는지 테스트', () => {
+    const lotto = new Lotto([1, 2, 3, 4, 5, 6]);
+    expect(lotto.containsBonus(1)).toBe(true);
+    expect(lotto.containsBonus(23)).toBe(false);
+  });
+
   test('로또 번호의 개수가 6개가 넘어가면 예외가 발생한다.', () => {
     expect(() => {
       new Lotto([1, 2, 3, 4, 5, 6, 7]);

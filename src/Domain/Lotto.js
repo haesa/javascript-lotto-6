@@ -22,6 +22,10 @@ class Lotto {
       0
     );
   }
+
+  containsBonus(bonus) {
+    return this.#numbers.includes(bonus);
+  }
 }
 
 export default Lotto;
