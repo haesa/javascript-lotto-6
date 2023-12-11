@@ -4,6 +4,7 @@ import LottoPrize from './Domain/LottoPrize';
 import LottoProfit from './Domain/LottoProfit';
 import LottoShop from './Domain/LottoShop';
 import OutputView from './View/OutputView';
+import repeatAsyncFunction from './repeat';
 
 class App {
   #lotto;
@@ -26,33 +27,25 @@ class App {
   }
 
   async #readBuyingPrice() {
-    try {
-      return await InputView.readBuyingPrice();
-    } catch (error) {
-      OutputView.printError(error);
-      return await this.#readBuyingPrice();
-    }
+    const readBuyingPrice = async () => await InputView.readBuyingPrice();
+    return await repeatAsyncFunction(readBuyingPrice);
   }
 
   async #readWinningNumbers() {
-    try {
+    const readWinningNumbers = async () => {
       const winningNumbers = await InputView.readWinningNumbers();
       return await new Lotto(winningNumbers);
-    } catch (error) {
-      OutputView.printError(error);
-      return await this.#readWinningNumbers();
-    }
+    };
+    return await repeatAsyncFunction(readWinningNumbers);
   }
 
   async #readBonusNumber() {
-    try {
+    const readBonusNumber = async () => {
       const bonus = await InputView.readBonusNumber();
       this.#lotto.validateBonus(bonus);
       return bonus;
-    } catch (error) {
-      OutputView.printError(error);
-      return await this.#readBonusNumber();
-    }
+    };
+    return await repeatAsyncFunction(readBonusNumber);
   }
 
   #matchLottoTickets(lottoTickets) {
