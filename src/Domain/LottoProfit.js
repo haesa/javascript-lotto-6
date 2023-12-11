@@ -7,15 +7,15 @@ class LottoProfit {
     fifth: 5_000,
   };
 
-  static calculateProfit(lottoResult) {
-    return lottoResult.reduce(
+  static #calculateProfit(lottoPrizes) {
+    return lottoPrizes.reduce(
       (profit, prize) => profit + LottoProfit.PRIZE[prize],
       0
     );
   }
 
-  static calculateYield(lottoResult, buyingPrice) {
-    const profit = LottoProfit.calculateProfit(lottoResult);
+  static calculateYield(lottoPrizes, buyingPrice) {
+    const profit = LottoProfit.#calculateProfit(lottoPrizes);
     return ((profit / buyingPrice) * 100).toFixed(1);
   }
 }
