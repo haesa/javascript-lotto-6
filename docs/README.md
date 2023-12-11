@@ -11,7 +11,7 @@
     로또 수익률 = 로또 수익 / 로또 구매 금액 * 100
     ```
 - 로또 수익 구하는 기능 - `calculateProfit()`
-- 로또 숫자 정렬하는 기능 - `sortLottoNumber()`
+- 로또 숫자 정렬하는 기능 - `sortLottoNumbers()`
 
   <br />
 
