@@ -1,3 +1,5 @@
+import { ERROR, VALIDATOR } from '../constants';
+
 class Lotto {
   #numbers;
 
@@ -7,16 +9,16 @@ class Lotto {
   }
 
   #validate(numbers) {
-    if (numbers.length !== 6) {
-      throw new Error('[ERROR] 숫자 6개를 입력하세요.');
+    if (VALIDATOR.lottoNumbersLength(numbers)) {
+      throw new Error(ERROR.lottoNumbersLength);
     }
 
-    if (numbers.some((number) => number < 1 || number > 45)) {
-      throw new Error('[ERROR] 1 이상 45 이하의 숫자를 입력하세요.');
+    if (VALIDATOR.lottoNumberRange(numbers)) {
+      throw new Error(ERROR.lottoNumberRange);
     }
 
-    if (new Set(numbers).size < 6) {
-      throw new Error('[ERROR] 숫자 중복 없이 입력하세요.');
+    if (VALIDATOR.lottoNumbersUnique(numbers)) {
+      throw new Error(ERROR.lottoNumbersUnique);
     }
   }
 
@@ -33,7 +35,7 @@ class Lotto {
 
   validateBonus(bonus) {
     if (this.#numbers.includes(bonus)) {
-      throw new Error('[ERROR] 당첨 번호에 없는 숫자를 입력하세요.');
+      throw new Error(ERROR.bonusNumberExcluded);
     }
   }
 }

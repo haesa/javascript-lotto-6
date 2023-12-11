@@ -1,28 +1,31 @@
+import { ERROR, VALIDATOR } from '../constants';
+
 const InputValidator = {
   buyingPrice(input) {
-    if (!/^[0-9]+$/.test(input)) {
-      throw new Error('[ERROR] 숫자를 입력하세요.');
+    if (VALIDATOR.notNumber(input)) {
+      throw new Error(ERROR.number);
     }
 
-    if (Number(input) % 1000 !== 0) {
-      throw new Error('[ERROR] 1000 단위로 입력하세요.');
+    if (VALIDATOR.buyingPriceUnit(input)) {
+      throw new Error(ERROR.buyingPriceUnit);
     }
   },
 
   winningNumbers(inputArray) {
-    if (inputArray.some((value) => !/^[0-9]+$/.test(value))) {
-      throw new Error('[ERROR] 숫자를 입력하세요.');
+    if (inputArray.some(VALIDATOR.notNumber)) {
+      throw new Error(ERROR.number);
     }
   },
 
   bonusNumber(input) {
-    if (!/^[0-9]+$/.test(input)) {
-      throw new Error('[ERROR] 숫자를 입력하세요.');
+    if (VALIDATOR.notNumber(input)) {
+      throw new Error(ERROR.number);
     }
 
-    if (Number(input) < 1 || Number(input) > 45) {
-      throw new Error('[ERROR] 1 이상 45 이하의 숫자를 입력하세요.');
+    if (VALIDATOR.bonusNumberRange(input)) {
+      throw new Error(ERROR.lottoNumberRange);
     }
   },
 };
+
 export default InputValidator;

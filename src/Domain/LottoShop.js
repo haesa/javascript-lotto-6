@@ -1,11 +1,16 @@
 import { Random } from '@woowacourse/mission-utils';
+import { LOTTO } from '../constants';
 
 const LottoShop = {
   createLottoNumber() {
-    return Random.pickUniqueNumbersInRange(1, 45, 6);
+    return Random.pickUniqueNumbersInRange(
+      LOTTO.minNumber,
+      LOTTO.maxNumber,
+      LOTTO.length
+    );
   },
   issueLottoTickets(buyingPrice) {
-    const amount = buyingPrice / 1000;
+    const amount = buyingPrice / LOTTO.price;
     return Array.from({ length: amount }, LottoShop.createLottoNumber);
   },
 };
