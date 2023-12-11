@@ -1,8 +1,8 @@
-import ERROR from './error.js';
-import INPUT from './input.js';
-import LOTTO from './lotto.js';
-import OUTPUT from './output.js';
-import { PRIZE, TIER, WINNING } from './prize.js';
-import VALIDATOR from './validator.js';
+import ERROR from './error';
+import INPUT from './input';
+import LOTTO from './lotto';
+import OUTPUT from './output';
+import { PRIZE, TIER, WINNING } from './prize';
+import VALIDATOR from './validator';
 
 export { ERROR, INPUT, LOTTO, OUTPUT, PRIZE, TIER, VALIDATOR, WINNING };
