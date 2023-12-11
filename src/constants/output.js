@@ -1,4 +1,4 @@
-const OUTPUT = {
+const OUTPUT = Object.freeze({
   purchaseMessage: (lottoTickets) => `${lottoTickets.length}개를 구매했습니다.`,
   winningStatistics: '당첨 통계',
   divider: '---',
@@ -23,6 +23,6 @@ const OUTPUT = {
       lottoPrizes.filter((prize) => prize === 'first').length
     }개`,
   lottoYield: (lottoYield) => `총 수익률은 ${lottoYield}%입니다.`,
-};
+});
 
 export default OUTPUT;

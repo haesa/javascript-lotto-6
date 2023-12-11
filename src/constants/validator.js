@@ -1,6 +1,6 @@
 import { LOTTO } from '../constants';
 
-const VALIDATOR = {
+const VALIDATOR = Object.freeze({
   lottoNumbersLength: (numbers) => numbers.length !== LOTTO.length,
   lottoNumberRange: (numbers) =>
     numbers.some(
@@ -10,6 +10,6 @@ const VALIDATOR = {
   notNumber: (value) => !/^[0-9]+$/.test(value),
   buyingPriceUnit: (value) => Number(value) % 1000 !== 0,
   bonusNumberRange: (value) => Number(value) < 1 || Number(value) > 45,
-};
+});
 
 export default VALIDATOR;
